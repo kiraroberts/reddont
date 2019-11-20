@@ -22,9 +22,14 @@ class Vote extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleUpVote}>Up Vote</button>
-        <h3>{this.state.count}</h3>
-        <button onClick={this.handleDownVote}>Down Vote</button>
+        <style global jsx>{`
+        i:hover {
+          cursor: pointer;
+          }
+        `}</style>
+        <i className="tiny material-icons" onClick={this.handleUpVote}>keyboard_arrow_up</i>
+        <h6>{this.state.count}</h6>
+        <i className="tiny material-icons" onClick={this.handleDownVote}>keyboard_arrow_down</i>
       </div>
     )
   }

@@ -3,6 +3,7 @@ import Comment from './Comment'
 import PropTypes from 'prop-types'
 
 function CommentList(props){
+  props.commentList.sort((a, b) => b.count - a.count);
   return (
     <div>
       <hr/>

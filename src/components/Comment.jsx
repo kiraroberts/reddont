@@ -5,22 +5,36 @@ import Vote from './Vote'
 function Comment(props){
   return (
     <div>
-      <style global jsx>{`
-      div {
-        background-color: lightblue;
+      {/* <style global jsx>{`
+      .voteFloat {
+        float: left;
         }
-      `}</style>
-      <Vote/>
-      <h3>{props.name}</h3>
-      <p><em>{props.comment}</em></p>
-      <hr/>
+      `}</style> */}
+      <div className="row">
+        <div className="col s12 m">
+          <div className="card teal lighten-2">
+            <div className="card-content white-text">
+              <div className="row valign-wrapper">
+                <div className="col s1">
+                  <Vote/>
+                </div>
+                <div className="col s11">
+                  <h4>{props.name}</h4>
+                  <hr/>
+                  <p><em>{props.content}</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
 
 Comment.propTypes = {
   name: PropTypes.string.isRequired,
-  comment: PropTypes.string
+  content: PropTypes.string
 }
 
 export default Comment
